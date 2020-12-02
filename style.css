@@ -41,12 +41,31 @@
     margin-left: 12%;
 }
 
-.celsius {
-    text-align: center;
-    margin-top: 25px;
+.results {
+    display: inline-block;
+    width: 100%;
 }
 
-.celsius-value {
+.fahrenheit-results {
+    display: inherit;
+    margin-left: 15%;
     text-align: center;
-    margin-top: -10px;
+}
+
+.celsius-results {
+    display: inherit;
+    margin-left: 9%;
+    text-align: center;
+}
+
+.kelvin-results {
+    display: inherit;
+    margin-left: 9%;
+    text-align: center;
+}
+
+.rankine-results {
+    display: inherit;
+    margin-left: 9%;
+    text-align: center;
 }
