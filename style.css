@@ -1,0 +1,52 @@
+.container {
+    margin-left: 25%;
+    margin-top: 10%;
+    width: 50%;
+    border: solid;
+    padding-bottom: 75px;
+    height: 225px;
+}
+
+.header {
+    text-align: center;
+}
+
+.row{
+    display: inline-block;
+    width: 100%;
+}
+
+.fahrenheit {
+    margin-left: 15%;
+    display: inherit;
+}
+
+.value {
+    display: inherit;
+    margin-left: 13%;
+}
+
+.value p {
+    text-align: center;
+}
+
+.value input {
+    border: solid;
+    width: 100px;
+    text-align: center;
+}
+
+.calculate-button {
+    display: inherit;
+    margin-left: 12%;
+}
+
+.celsius {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.celsius-value {
+    text-align: center;
+    margin-top: -10px;
+}
