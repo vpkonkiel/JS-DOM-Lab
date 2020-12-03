@@ -65,75 +65,74 @@ let selectElement = document.getElementById("temperature");
 let selection = selectElement.children;
 
 button[0].addEventListener("click", () => {
-    selection.addEventListener("change", () => {
-        if(selection[0]) {
+   
+    if(selectElement.value == "fahrenheit") {
+    let userInput = document.getElementsByTagName("input");
+    let fahrenheit = userInput[0].value;
+    let celsius = convertFToCelsius(fahrenheit);
+    let celsiusOutput = document.getElementsByClassName("celsius-value");
+    celsiusOutput[0].textContent = celsius + " C";
+
+    let fahrenheitOutput = document.getElementsByClassName("fahrenheit-value");
+    fahrenheitOutput[0].textContent = fahrenheit + " F";
+
+    let kelvin = convertFToKelvin(fahrenheit);
+    let kelvinOutput = document.getElementsByClassName("kelvin-value");
+    kelvinOutput[0].textContent = kelvin + " K";
+
+    let rankine = convertFToRankine(parseInt(fahrenheit));
+    let rankineOutput = document.getElementsByClassName("rankine-value");
+    rankineOutput[0].textContent = rankine + " R";
+    } else if(selectElement.value == "celsius") {
         let userInput = document.getElementsByTagName("input");
-        let fahrenheit = userInput[0].value;
-        let celsius = convertFToCelsius(fahrenheit);
+        let celsius = userInput[0].value;
         let celsiusOutput = document.getElementsByClassName("celsius-value");
         celsiusOutput[0].textContent = celsius + " C";
-
+    
+        let fahrenheit = convertCToFahrenheit(celsius);
         let fahrenheitOutput = document.getElementsByClassName("fahrenheit-value");
         fahrenheitOutput[0].textContent = fahrenheit + " F";
-
-        let kelvin = convertFToKelvin(fahrenheit);
+    
+        let kelvin = convertCToKelvin(celsius);
         let kelvinOutput = document.getElementsByClassName("kelvin-value");
         kelvinOutput[0].textContent = kelvin + " K";
-
-        let rankine = convertFToRankine(parseInt(fahrenheit));
+    
+        let rankine = convertCToRankine(celsius);
         let rankineOutput = document.getElementsByClassName("rankine-value");
         rankineOutput[0].textContent = rankine + " R";
-        } else if(selection[1]) {
+        } else if(selectElement.value == "kelvin") {
             let userInput = document.getElementsByTagName("input");
-            let celsius = userInput[0].value;
+            let kelvin = userInput[0].value;
+            let kelvinOutput = document.getElementsByClassName("kelvin-value");
+            kelvinOutput[0].textContent = kelvin + " K";
+
+            let celsius = convertKToCelsius(kelvin);
             let celsiusOutput = document.getElementsByClassName("celsius-value");
             celsiusOutput[0].textContent = celsius + " C";
         
-            let fahrenheit = convertCToFahrenheit(celsius);
+            let fahrenheit = convertKToFahrenheit(kelvin);
             let fahrenheitOutput = document.getElementsByClassName("fahrenheit-value");
             fahrenheitOutput[0].textContent = fahrenheit + " F";
         
-            let kelvin = convertCToKelvin(celsius);
-            let kelvinOutput = document.getElementsByClassName("kelvin-value");
-            kelvinOutput[0].textContent = kelvin + " K";
-        
-            let rankine = convertCToRankine(celsius);
+            let rankine = convertKToRankine(kelvin);
             let rankineOutput = document.getElementsByClassName("rankine-value");
             rankineOutput[0].textContent = rankine + " R";
-            } else if(selection[2]) {
+            } else if(selectElement.value == "rankine") {
                 let userInput = document.getElementsByTagName("input");
-                let kelvin = userInput[0].value;
+                let rankine = userInput[0].value;
+                let rankineOutput = document.getElementsByClassName("rankine-value");
+                rankineOutput[0].textContent = rankine + " R";
+
+                let kelvin = convertRToKelvin(rankine);
                 let kelvinOutput = document.getElementsByClassName("kelvin-value");
                 kelvinOutput[0].textContent = kelvin + " K";
-
-                let celsius = convertKToCelsius(kelvin);
+    
+                let celsius = convertRToCelsius(rankine)
                 let celsiusOutput = document.getElementsByClassName("celsius-value");
                 celsiusOutput[0].textContent = celsius + " C";
             
-                let fahrenheit = convertKToFahrenheit(kelvin);
+                let fahrenheit = convertRToFahrenheit(rankine);
                 let fahrenheitOutput = document.getElementsByClassName("fahrenheit-value");
                 fahrenheitOutput[0].textContent = fahrenheit + " F";
-            
-                let rankine = convertKToRankine(kelvin);
-                let rankineOutput = document.getElementsByClassName("rankine-value");
-                rankineOutput[0].textContent = rankine + " R";
-                } else if(selection[3]) {
-                    let userInput = document.getElementsByTagName("input");
-                    let rankine = userInput[0].value;
-                    let rankineOutput = document.getElementsByClassName("rankine-value");
-                    rankineOutput[0].textContent = rankine + " R";
-
-                    let kelvin = convertRToKelvin(rankine);
-                    let kelvinOutput = document.getElementsByClassName("kelvin-value");
-                    kelvinOutput[0].textContent = kelvin + " K";
-        
-                    let celsius = convertRToCelsius(rankine)
-                    let celsiusOutput = document.getElementsByClassName("celsius-value");
-                    celsiusOutput[0].textContent = celsius + " C";
-                
-                    let fahrenheit = convertRToFahrenheit(rankine);
-                    let fahrenheitOutput = document.getElementsByClassName("fahrenheit-value");
-                    fahrenheitOutput[0].textContent = fahrenheit + " F";
-                    }
-    })
+                }
 });
