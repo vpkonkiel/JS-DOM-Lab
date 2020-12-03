@@ -16,9 +16,10 @@
     width: 100%;
 }
 
-.fahrenheit {
-    margin-left: 15%;
+.scale-entity {
     display: inherit;
+    text-align: center;
+    margin-left: 15%;
 }
 
 .value {
@@ -39,6 +40,8 @@
 .calculate-button {
     display: inherit;
     margin-left: 12%;
+    background-color: #DBE8FC;
+    border: solid, #7293C2;
 }
 
 .results {

@@ -9,7 +9,15 @@
         <div class="container">
             <h1 class="header">Temperature Scale Converter</h1>
             <div class="row">
-                <p class="fahrenheit">Fahrenheit</p>
+                <div class="scale-entity">
+                    <p class="scale">Scale</p>
+                    <select name="temperature" id="temperature">
+                        <option id="dropdown-fah">Fahrenheit</option>
+                        <option id="dropdown-cel">Celsius</option>
+                        <option id="dropdown-kel">Kelvin</option>
+                        <option id="dropdown-ran">Rankine</option>
+                    </select>
+                </div>
                 <div class="value">
                     <p>Value</p>
                     <input type="text" value="">
